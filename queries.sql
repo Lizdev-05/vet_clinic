@@ -10,7 +10,6 @@ SELECT * FROM animals WHERE neutered is true;
 SELECT * FROM animals WHERE name != 'Gabumon';
 SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
 
-ALTER TABLE animal ADD COLUMN specie VARCHAR;
 BEGIN;
 UPDATE animal SET specie = 'unspecified';
 ROLLBACK;
@@ -30,3 +29,14 @@ DELETE FROM animals WHERE date_of_birth > '2022-01-01';
 SAVEPOINT S1;
 UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
 ROLLBACK S1;
+SELECT COUNT(*) FROM animals;
+
+SELECT COUNT(*) FROM animals WHERE escape_attempt = 0;
+
+SELECT AVG(weight_kg) FROM animals;
+
+SELECT MAX(escape_attempt) FROM animals;
+
+SELECT MIN(weight_kg), MAX(weight_kg) FROM animals;
+
+SELECT AVG(escape_attempt) FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31';
