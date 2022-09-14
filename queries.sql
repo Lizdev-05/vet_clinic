@@ -45,8 +45,6 @@ SELECT AVG(escape_attempt) FROM animals WHERE date_of_birth BETWEEN '1990-01-01'
 -- relational
 ALTER TABLE animals  DROP COLUMN specie;
 -- Modify inserted animal to have specie-id
-UPDATE animals SET species_id = '2' WHERE name LIKE '%mon';
-UPDATE animals SET species_id = '1' WHERE name NOT LIKE '%mon';
 
 SELECT animals.name FROM animals JOIN owners ON animals.owners_id = owners.id WHERE owners.full_name = 'Melody Pond';
 SELECT * FROM animals JOIN species ON animals.species_id = species.id WHERE species.name = 'Pokemon';
