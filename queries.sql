@@ -43,7 +43,7 @@ SELECT MIN(weight_kg), MAX(weight_kg) FROM animals;
 SELECT AVG(escape_attempt) FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31';
 
 -- relational
-DELETE specie FROM animals; 
+ALTER TABLE animals  DROP COLUMN specie;
 -- Modify inserted animal to have specie-id
-UPDATE animals SET species_id = 1 WHERE name LIKE '%mon';
-UPDATE animals SET species_id = 2 WHERE name NOT LIKE '%mon';
+UPDATE animals SET species_id = '2' WHERE name LIKE '%mon';
+UPDATE animals SET species_id = '1' WHERE name NOT LIKE '%mon';
