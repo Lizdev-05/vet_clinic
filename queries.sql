@@ -59,6 +59,4 @@ SELECT animals.name from animals JOIN owners ON owners.id = animals.owners_id JO
 
 SELECT animals.name from animals JOIN owners ON owners.id = animals.owners_id WHERE animals.escape_attempt = '0' AND animals.owners_id = '5';
 
-SELECT owners.full_name FROM owners JOIN animals ON animals.owners_id COUNT(animals.id) = (SELECT MAX(animals.id) FROM animals;
-
 SELECT full_name, COUNT(owners_id) FROM owners JOIN animals on owners.id = animals.owners_id GROUP BY full_name ORDER BY COUNT (owners_id) desc limit 1;
