@@ -29,8 +29,8 @@ DELETE FROM animals WHERE date_of_birth > '2022-01-01';
 SAVEPOINT S1;
 UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
 ROLLBACK S1;
-SELECT MAX(escape_attempt), neutered FROM animals GROUP BY neutered;
-
+SELECT neutered, MAX(escape_attempt) FROM animals
+GROUP BY neutered;
 
 SELECT COUNT(*) FROM animals WHERE escape_attempt = 0;
 
