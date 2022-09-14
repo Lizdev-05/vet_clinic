@@ -23,7 +23,7 @@ CREATE TABLE species (
     name VARCHAR(100) NOT NULL
 );
 
-ALTER TABLE animals  DROP COLUMN specie;
+ALTER TABLE animals  DROP COLUMN specie; 
 
-ALTER TABLE animals ADD COLUMN specie_id BIGSERIAL REFERENCES specie (id);
-ALTER TABLE animals ADD COLUMN owner_id BIGSERIAL REFERENCES owners (id);
+ALTER TABLE animals ADD COLUMN species_id BIGINT REFERENCES species (id);
+ALTER TABLE animals ADD COLUMN owners_id BIGINT REFERENCES owners (id);

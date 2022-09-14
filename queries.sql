@@ -45,5 +45,5 @@ SELECT AVG(escape_attempt) FROM animals WHERE date_of_birth BETWEEN '1990-01-01'
 -- relational
 DELETE specie FROM animals; 
 -- Modify inserted animal to have specie-id
-UPDATE animals SET specie_id = 1 WHERE name LIKE '%mon';
-UPDATE animals SET specie_id = 2 WHERE name name LIKE != '%mon';
+UPDATE animals SET species_id = 1 WHERE name LIKE '%mon';
+UPDATE animals SET species_id = 2 WHERE name NOT LIKE '%mon';

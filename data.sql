@@ -15,17 +15,23 @@ VALUES('Agumon', date '2020-02-03', '0', 'true', '10.23'),
 
 
 INSERT INTO owners(full_name, age)
-VALUES('Sam Smith', '34 years old'),
-('Jennifer Orwell', '19 years old'),
-('Bob', '45 years old'),
-('Melody Pond', '77 years old'),
-('Dean Winchester', '14 years old'),
-('Jodie Whittaker', '38 years old');
+VALUES('Sam Smith', '34'),
+('Jennifer Orwell', '19'),
+('Bob', '45'),
+('Melody Pond', '77'),
+('Dean Winchester', '14'),
+('Jodie Whittaker', '38');
 
 
-INSERT INTO species(full_name, age)
+INSERT INTO species(name)
 VALUES('Pokemon'),
 ('Digimon'); 
 
+
+UPDATE animals SET owner_id = '1' WHERE name = 'Agumon';
+UPDATE animals SET owner_id = '2' WHERE name = 'Gabumon' OR 'Pikachu';
+UPDATE animals SET owner_id = '3' WHERE name = 'Devimon' OR 'Plantmon';
+UPDATE animals SET owner_id = '4' WHERE name = 'Charmander' OR 'Squirtle' OR 'Blossom';
+UPDATE animals SET owner_id = '5' WHERE name = 'Angemon' OR 'Boarmon';
 
 
