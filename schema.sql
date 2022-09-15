@@ -33,20 +33,20 @@ CREATE TABLE vets (
     id BIGSERIAL NOT NULL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     age INT,
-    date_of_graduation DATE
+    date_of_graduation DATE NOT NULL
 );
 
 CREATE TABLE specialization (
-    id BIGSERIAL NOT NULL PRIMARY KEY,
     vet_id BIGINT REFERENCES vets (id),
     species_id BIGINT REFERENCES species (id)
 );
 
 CREATE TABLE visits (
-    id BIGSERIAL NOT NULL PRIMARY KEY,
     vet_id BIGINT REFERENCES species (id),
     animals_id BIGINT REFERENCES animals (id)
+    date_of_visit DATE NOT NULL
 );
+
 
 
 
