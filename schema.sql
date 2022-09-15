@@ -35,3 +35,17 @@ CREATE TABLE vets (
     age INT,
     date_of_graduation DATE
 );
+
+CREATE TABLE specialization (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    vet_id BIGINT REFERENCES vets (id),
+    species_id BIGINT REFERENCES species (id)
+);
+
+CREATE TABLE visits (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    vet_id BIGINT REFERENCES species (id),
+    animals_id BIGINT REFERENCES animals (id)
+);
+
+
