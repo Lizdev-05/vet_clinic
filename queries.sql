@@ -62,8 +62,9 @@ SELECT full_name, COUNT(owners_id) FROM owners JOIN animals on owners.id = anima
 SELECT animals.name FROM animals JOIN visits ON animals.id = visits.animals_id WHERE vets_id = '1' ORDER BY visits.date_of_visit desc limit 1;
 SELECT COUNT(DISTINCT animals_id) FROM visits WHERE vets_id = '2';
 
--- SELECT vets.name FROM vets JOIN species ON species.id = vets.id RIGHT JOIN specialization ON specialization.species_id = vets.id;
-
  SELECT vets.name, specialization.vets_id, specialization.species_id FROM vets LEFT JOIN specialization ON specialization.vets_id = vets.id;
 
-SELECT animals.name FROM animals JOIN visits ON animals.id = visits.animals_id WHERE visits.date_of_visit BETWEEN '2020-04-01' AND '2020-04-30';
+SELECT animals.name , visits.date_of_visit FROM animals JOIN visits ON animals.id = visits.animals_id WHERE visits.date_of_visit BETWEEN '2020-04-01' AND '2020-08-30' AND vets_id = '3';
+
+
+SELECT animals.name, COUNT(animals_id) FROM animals JOIN visits ON animals.id = visits.animals_id GROUP BY animals.name ORDER BY COUNT(animals_id) desc limit 1;
