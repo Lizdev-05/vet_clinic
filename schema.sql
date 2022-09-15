@@ -37,12 +37,12 @@ CREATE TABLE vets (
 );
 
 CREATE TABLE specialization (
-    vet_id BIGINT REFERENCES vets (id),
+    vets_id BIGINT REFERENCES vets (id),
     species_id BIGINT REFERENCES species (id)
 );
 
 CREATE TABLE visits (
-    vet_id BIGINT REFERENCES species (id),
+    vets_id BIGINT REFERENCES species (id),
     animals_id BIGINT REFERENCES animals (id)
     date_of_visit DATE NOT NULL
 );
