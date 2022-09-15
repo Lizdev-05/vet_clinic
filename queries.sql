@@ -58,3 +58,6 @@ SELECT animals.name from animals JOIN owners ON owners.id = animals.owners_id JO
 SELECT animals.name from animals JOIN owners ON owners.id = animals.owners_id WHERE animals.escape_attempt = '0' AND animals.owners_id = '5';
 
 SELECT full_name, COUNT(owners_id) FROM owners JOIN animals on owners.id = animals.owners_id GROUP BY full_name ORDER BY COUNT (owners_id) desc limit 1;
+
+SELECT animals.name FROM animals JOIN visits ON animals.id = visits.animals_id WHERE vets_id = '1' ORDER BY visits.date_of_visit desc limit 1;
+SELECT COUNT(DISTINCT animals_id) FROM visits WHERE vets_id = '2';
