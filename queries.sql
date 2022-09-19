@@ -88,3 +88,11 @@ WHERE specialization.species_id IS NULL
 GROUP BY vets.name, specialization.species_id;
 
 SELECT species.name, COUNT(animals.species_id) FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id JOIN species ON species.id = animals.species_id WHERE vets.name = 'Vet Maisy Smith' GROUP BY species.name ORDER BY COUNT(animals.species_id) desc limit 1;
+
+-- Performance
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animals_id = 4;
+
+EXPLAIN ANALYZE SELECT * FROM visits where vets_id = 2;
+
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
+
