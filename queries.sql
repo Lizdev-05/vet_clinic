@@ -93,3 +93,5 @@ SELECT species.name, COUNT(animals.species_id) FROM animals JOIN visits ON anima
 EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animals_id = 4;
 
 EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
+
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
