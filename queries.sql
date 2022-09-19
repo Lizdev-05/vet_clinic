@@ -78,7 +78,7 @@ SELECT animals.name, vets.name, visits.date_of_visit FROM animals JOIN visits ON
 
 SELECT *, visits.date_of_visit FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id WHERE visits.date_of_visit = (SELECT MIN(date_of_visit) FROM visits);
 
-SELECT COUNT(visits.animals_id) FROM visits JOIN vets ON vets.id = visits.vets_id WHERE specialization.species_id IS NULL;
+SELECT COUNT(visits.animals_id) FROM visits JOIN vets ON vets.id = visits.vets_id WHERE vets_id = '2';
 
 
 SELECT COUNT(visits.animals_id), vets.name FROM visits 
@@ -86,6 +86,5 @@ JOIN vets ON vets.id = visits.vets_id
 LEFT JOIN specialization ON vets.id = specialization.vets_id
 WHERE specialization.species_id IS NULL
 GROUP BY vets.name, specialization.species_id;
-
 
 SELECT species.name, COUNT(animals.species_id) FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id JOIN species ON species.id = animals.species_id WHERE vets.name = 'Vet Maisy Smith' GROUP BY species.name ORDER BY COUNT(animals.species_id) desc limit 1;
