@@ -48,7 +48,8 @@ CREATE TABLE visits (
 );
 
 
-
+-- Perfomance
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 
 
 
