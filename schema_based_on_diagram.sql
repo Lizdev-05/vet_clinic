@@ -27,6 +27,16 @@ CREATE TABLE treatment(
       name VARCHAR
 );
 
+CREATE TABLE invoice_items (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    unit_price DECIMAL,
+    quantity INT,
+    total_price DECIMAL,
+    invoice_id BIGINT REFERENCES invoices (id)
+    treatment_id BIGINT REFERENCES treatment (id)
+);
+
+
 
 
 
