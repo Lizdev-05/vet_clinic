@@ -37,6 +37,7 @@ CREATE TABLE invoice_items (
 );
 
 CREATE INDEX ON medical_histories(patient_id)
+CREATE INDEX ON invoices(medical_histories_id)
 
 
 
