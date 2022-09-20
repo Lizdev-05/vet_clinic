@@ -21,26 +21,11 @@ CREATE TABLE invoices (
     medical_histories_id BIGINT REFERENCES medical_histories (id)
 );
 
--- CREATE TABLE treatment(
---       id BIGSERIAL NOT NULL PRIMARY KEY,
---       type VARCHAR,
---       name VARCHAR
--- );
-
--- CREATE TABLE invoice_items (
---     id BIGSERIAL NOT NULL PRIMARY KEY,
---     unit_price DECIMAL,
---     quantity INT,
---     total_price DECIMAL,
---     invoice_id BIGINT REFERENCES invoices (id)
---     treatment_id BIGINT REFERENCES treatment (id)
--- );
-
--- CREATE INDEX ON  owners (email);
-
--- CREATE INDEX ON visits (vets_id);
-
--- CREATE INDEX ON visits
+CREATE TABLE treatment(
+      id BIGSERIAL NOT NULL PRIMARY KEY,
+      type VARCHAR,
+      name VARCHAR
+);
 
 
 
