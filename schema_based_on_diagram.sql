@@ -36,6 +36,7 @@ CREATE TABLE invoice_items (
     treatment_id BIGINT REFERENCES treatment (id)
 );
 
+CREATE INDEX ON medical_histories(patient_id)
 
 
 
