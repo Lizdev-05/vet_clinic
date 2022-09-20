@@ -1,0 +1,39 @@
+TABLE animals {
+  id BIGSERIAL [pk, increment]
+    name VARCHAR(100)
+    date_of_birth DATE 
+    escape_attempt INT
+    neutered BOOLEAN
+    weight_kg DECIMAL
+    species_id INT [ref: > species.id] 
+    owners_id INT [ref: > owners.id]
+}
+
+TABLE owners {
+    id BIGSERIAL [pk, increment]
+    full_name VARCHAR(100)
+    age INT
+}
+
+TABLE species {
+    id BIGSERIAL [pk, increment]
+    name VARCHAR(100)
+}
+
+TABLE vets {
+    id BIGSERIAL [pk, increment]
+   name VARCHAR(100)
+    age INT
+    date_of_graduation DATE
+}
+
+TABLE visits {
+    vets_id INT [ref: > vets.id]
+    animals_id INT [ref: > animals.id]
+    date_of_visit DATE
+}
+
+TABLE specialization {
+   species_id INT [ref: > species.id]
+  vets_id INT [ref: > vets.id]
+}
