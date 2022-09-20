@@ -9,7 +9,8 @@ CREATE TABLE patients (
 CREATE TABLE medical_histories (
     id BIGSERIAL NOT NULL PRIMARY KEY,
     admitted_at timestamp,
-    patient_id BIGINT REFERENCES patients (id)
+    patient_id BIGINT REFERENCES patients (id),
+    status VARCHAR(50)
 );
 
 
